@@ -5,22 +5,64 @@
 \section{Latar Belakang}
 \label{sec:label}
 
-Bagian ini akan diisi dengan apa yang melatarbelakangi pembuatan template skripsi ini.
-Termasuk juga masalah-masalah yang akan dihadapi untuk membuatnya, termasuk kurangnya kemampuan penguasaan \LaTeX{} sehingga template ini dibuat dengan mengandalkan berbagai contoh yang tersebar di dunia maya, yang digabung-gabung menjadi satu jua.
-Bagian lain juga akan dilengkapi, untuk sementara diisi dengan lorem ipsum versi bahasa inggris.
+Buku teks yang baik diharapkan dapat dipahami oleh seluruh target pembacanya. Salah satu aspek utama yang menentukan tingkat pemahaman terhadap sebuah buku adalah keterbacaan (\textit{readability}). Keterbacaan teks harus disesuaikan secara tepat dengan tingkat perkembangan kognitif dan tingkat pemahaman pembacanya. Untuk mengukur keterbacaan secara objektif, telah dikembangkan berbagai formula statistik, salah satunya adalah \textit{Automated Readability Index} (ARI). Formula ini dikembangkan oleh Smith \& Senter pada tahun 1967 untuk menilai tingkat kesulitan membaca materi teknis Angkatan Udara Amerika Serikat dalam bahasa Inggris.
+
+Pada penelitian awal Smith \& Senter, dipasangkan instrumen khusus pada mesin ketik untuk menghitung jumlah karakter, kata, dan kalimat secara mekanis. Sebanyak 24 buku dari sistem sekolah publik di Cincinnati (\textit{Cincinnati Public School System}) digunakan sebagai sampel, yang mencakup jenjang kelas (\textit{grade}) satu hingga tujuh dengan mengambil 20 sampel halaman dari setiap buku. Parameter yang dihitung meliputi:
+\begin{itemize}
+    \item \textit{word per sentence ratio} ($w/s$), yaitu membagi jumlah kata dengan jumlah kalimat;
+    \item \textit{strokes per word ratio} ($s/w$), yaitu membagi jumlah karakter dengan jumlah kata.
+\end{itemize}
+Kemudian, diperoleh hasil sebagai berikut:
+\begin{itemize}
+    \item Korelasi \textit{product-moment} antara $w/s$ dan \textit{grade} adalah 0,96.
+    \item Korelasi antara $s/w$ dan \textit{grade} adalah 0,84.
+    \item Korelasi antara panjang kalimat dan panjang kata adalah 0,71.
+\end{itemize}
+Penggabungan rasio-rasio tersebut menghasilkan:
+\begin{itemize}
+    \item \textit{Multiple R} sebesar 0,98 di dalam teks yang bobotnya dievaluasi.
+    \item \textit{Beta-coefficient} yang dikaitkan dengan panjang kalimat adalah 0,72, sedangkan untuk panjang kata adalah 0,33.
+\end{itemize}
+Berdasarkan parameter statistik yang didapatkan, persamaan regresi berganda untuk memprediksi tingkat kelas ($GL$) diformulasikan sebagai:
+\begin{equation}
+GL = 0{,}50\left(\frac{w}{s}\right)
+   + 4{,}71\left(\frac{s}{w}\right)
+   - 21{,}43
+\end{equation}
+
+di mana:
+    \begin{align*}
+    GL &= \text{tingkatan kelas (\textit{grade level}, skala 1--12)} \\
+    w/s &= \text{\textit{words per sentence} atau kata per kalimat} \\
+    s/w &= \text{\textit{strokes per word} atau karakter per kata}
+    \end{align*}
+    
+Meskipun formula ARI efisien karena tidak memerlukan perhitungan jumlah suku kata secara manual, formula standar ini dirancang khusus berdasarkan struktur morfologi bahasa Inggris. Penerapan langsung formula ini pada teks berbahasa Indonesia tidak dapat dilakukan. Secara morfologis, bahasa Indonesia memiliki karakteristik kata yang cenderung lebih panjang akibat penggunaan imbuhan, sehingga rasio karakter per kata pada teks bahasa Indonesia bernilai lebih tinggi dibandingkan dengan bahasa Inggris. Akibatnya, estimasi \textit{Grade Level} dari formula ARI asli menjadi berlebihan jika diterapkan tanpa rekalibrasi.
+
+Oleh karena itu, penelitian ini bertujuan untuk mengadaptasi dan merekalibrasi formula ARI khusus untuk bahasa Indonesia. Prosedur rekalibrasi dilakukan dengan menentukan kembali nilai bobot konstanta dan koefisien regresi berganda melalui pemrosesan data statistik dari korpus teks bahasa Indonesia. Jenjang $GL$ hasil rekalibrasi selanjutnya akan disesuaikan dengan jenjang pendidikan formal di Indonesia, yaitu Sekolah Dasar (1-6), Sekolah Menengah Pertama (7-9), dan Sekolah Menengah Atas/Kejuruan (10-12).
+
+Untuk menunjang pengujian dan penerapan formula baru tersebut, akan dikembangkan sebuah perangkat lunak berbasis \textit{desktop} dengan menggunakan \textit{framework} .NET. Perangkat lunak ini berfungsi untuk memuat teks masukan baik secara manual melalui \textit{text box} maupun unggahan berkas .txt, melakukan prapemrosesan teks, menghitung skor ARI terkalibrasi, serta menampilkan klasifikasi tingkat keterbacaan teks secara otomatis.
+
+Untuk keperluan data latih, dan data uji dalam proses rekalibrasi akan digunakan buku pelajaran tingkat dasar Indonesia, kelas 1 sampai dengan 12 yang diterbitkan oleh Kemendikbud, serta bank soal survei dari LPM sebagai pembanding keterbacaan aktual.
 
 \dtext{5-10}
 
 \section{Rumusan Masalah}
 \label{sec:rumusan}
-Bagian ini akan diisi dengan penajaman dari masalah-masalah yang sudah diidentifikasi di bagian sebelumnya. 
-
+\begin{enumerate}
+    \item Bagaimana cara mengadaptasi formula \textit{Automated Readability Index} (ARI) yang sesuai dengan bahasa Indonesia?
+    \item Bagaimana merancang sebuah aplikasi yang dapat menghitung tingkat keterbacaan teks dengan formula \textit{Automated Readability Index} (ARI) secara otomatis?
+    \item Seberapa tinggi tingkat akurasi dan korelasi hasil pengukuran keterbacaan sistem ARI bahasa Indonesia jika dibandingkan dengan tingkat keterbacaan aktual?
+\end{enumerate}
 \dtext{6}
 
 \section{Tujuan}
 \label{sec:tujuan}
-Akan dipaparkan secara lebih terperinci dan tersturkur apa yang menjadi tujuan pembuatan template skripsi ini
-
+\begin{enumerate}
+    \item Mengadaptasi formula \textit{Automated Readability Index} (ARI) yang terkalibrasi dengan bahasa Indonesia, dengan mempertimbangkan variabel seperti jumlah karakter, panjang kata, dan panjang kalimat.
+    \item Merancang dan mengimplementasikan sebuah aplikasi yang dapat menghitung tingkat keterbacaan teks menggunakan formula \textit{Automated Readability Index} (ARI) secara otomatis.
+    \item Menganalisis dan menguji tingkat akurasi serta korelasi hasil pengukuran keterbacaan dari sistem ARI bahasa Indonesia yang dikembangkan jika dibandingkan dengan standar tingkat keterbacaan aktual.
+\end{enumerate}
 \dtext{7}
 
 \section{Batasan Masalah}
@@ -31,14 +73,28 @@ Untuk mempermudah pembuatan template ini, tentu ada hal-hal yang harus dibatasi,
 
 \section{Metodologi}
 \label{sec:metlit}
-Tentunya akan diisi dengan metodologi yang serius sehingga templatenya terkesan lebih serius.
-
+\begin{enumerate}
+    \item Mempelajari bahasa pemrograman C\# beserta \textit{framework} .NET.
+    \item Melakukan studi literatur mengenai \textit{Automated Readability Index}.
+    \item Merancang aplikasi yang akan dibangun.
+    \item Mengimplementasikan fitur masukan (\textit{input}) melalui \textit{text box}.
+    \item Mengimplementasikan fitur penerimaan berkas berformat .txt.
+    \item Mengimplementasikan fitur perhitungan jumlah karakter, jumlah kata, dan jumlah kalimat.
+    \item Mengimplementasikan fitur perhitungan formula.
+    \item Merancang strategi prapemrosesan data.
+    \item Melakukan proses eksperimentasi pada data.
+    \item Menulis dokumen tugas akhir.
+\end{enumerate}
 \dtext{9}
 
 \section{Sistematika Pembahasan}
 \label{sec:sispem}
-Rencananya Bab 2 akan berisi petunjuk penggunaan template dan dasar-dasar \LaTeX.
-Mungkin bab 3,4,5 dapt diisi oleh ketiga jurusan, misalnya peraturan dasar skripsi atau pedoman penulisan, tentu jika berkenan.
-Bab 6 akan diisi dengan kesimpulan, bahwa membuat template ini ternyata sungguh menghabiskan banyak waktu.
-
+\begin{itemize}
+    \item Bab 1 Pendahuluan
+    \item Bab 2 Landasan terkompresi
+    \item Bab 3 Analisis
+    \item bab 4 Perancangan
+    \item Bab 5 Implementasi dan pengujian
+    \item Bab 6 Kesimpuan dan Saran
+\end{itemize}
 \dtext{10}
