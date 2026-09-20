@@ -1,14 +1,15 @@
 \documentclass[a4paper,twoside]{article}
 \usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc} % Corrected package name
+\usepackage[utf8]{inputenc} 
 \usepackage[bahasa]{babel}
+\usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage[cm]{fullpage}
 \usepackage{etoolbox}
 \usepackage{setspace}
 \usepackage{lipsum}
-\usepackage[inner=2cm,outer=2.5cm,top=2.5cm,bottom=2cm]{geometry} %margin
+\usepackage[inner=2cm,outer=2.5cm,top=2.5cm,bottom=2cm]{geometry} 
 
 \pagestyle{myheadings}
 \setlength{\headsep}{30pt}
@@ -46,56 +47,74 @@
 \pagenumbering{arabic}
 
 \section{Deskripsi}
-Buku teks yang baik diharapkan dapat dipahami oleh seluruh target pembacanya. Salah satu aspek yang membuat sebuah buku mudah dipahami adalah keterbacaan. Keterbacaan harus disesuaikan dengan tingkat kompetensi pembacanya. Untuk itu, terdapat formula yang diciptakan untuk mengukur tingkat keterbacaan teks. Salah satunya adalah Automated Readability Index yang diciptakan oleh Smith \& Senter pada tahun 1967 untuk mengukur tingkat kesulitan membaca materi teknis Angkatan Udara AS dalam bahasa inggris. Pada penelitian awal tersebut, dipasangkan alat pada mesin ketik untuk menghitung jumlah karakter, kata dan kalimat. Lalu, 24 buku di Cincinnati Public School System diketik dengan alat ini, dipilih dari buku-buku kelas (grade) satu hingga kelas tujuh dan diambil 20 sampel halaman dari setiap buku. Setelah itu, dihitung:
+Buku teks yang baik diharapkan dapat dipahami oleh seluruh target pembacanya. Salah satu aspek yang membuat sebuah buku mudah dipahami adalah keterbacaan. Keterbacaan harus disesuaikan dengan tingkat pemahaman pembacanya. Untuk itu, terdapat formula yang diciptakan untuk mengukur tingkat keterbacaan teks. Salah satunya adalah Automated Readability Index yang diciptakan oleh Smith \& Senter pada tahun 1967 untuk mengukur tingkat kesulitan membaca materi teknis Angkatan Udara AS dalam bahasa inggris. Pada penelitian tersebut, dipasangkan alat pada mesin ketik untuk menghitung jumlah karakter, kata dan kalimat. Lalu, 24 buku di Cincinnati Public School System diketik dengan alat ini, dipilih dari buku-buku kelas (grade) satu hingga kelas tujuh dan diambil 20 sampel halaman dari setiap buku. Setelah itu, dihitung:
 \begin{itemize}
     \item word per sentence ratio (w/s), dengan membagi kata dengan kalimat.
-    \item strokes per word ratio (s/w), menghitung jumlah karakter dengan kata
+    \item strokes per word ratio (s/w), membagi jumlah karakter dengan kata.
 \end{itemize}
-Didapatkan:
+Kemudian didapatkan:
 \begin{itemize}
-    \item Product moment correlation antara w/s dengan grade adalah 0,96
-    \item Korelasi antara s/w dengan grade adalah 0,84
+    \item Product moment correlation antara w/s dengan grade adalah 0,96.
+    \item Korelasi antara s/w dengan grade adalah 0,84.
     \item Korelasi antara panjang kalimat dengan panjang kata adalah 0,71.
 \end{itemize}
-Menggabungkan rasio-rasio tadi menghasilkan:
+Penggabungan rasio-rasio tersebut menghasilkan:
 \begin{itemize}
-    \item Multiple R 0,98 dalam teks
-    \item Beta-coefficient terasosiasi panjang kalimat 0,72, dengan panjang kata 0,33.
+    \item Multiple R 0,98 di dalam teks yang bobotnya dievaluasi.
+    \item Beta-coefficient yang dikaitkan dengan panjang kalimat adalah 0,72, sedangkan untuk panjang kata adalah 0,33.
 \end{itemize}
+Berdasarkan parameter statistik yang didapatkan, persamaan regresi berganda untuk memprediksi tingkat kelas ($GL$) diformulasikan sebagai:
+\begin{equation}
+GL = 0.50\left(\frac{w}{s}\right)
+   + 4.71\left(\frac{s}{w}\right)
+   - 21.43
+\end{equation}
+
+dimana:
+\begin{align*}
+GL &= \text{tingkatan kelas} \\
+w/s &= \text{words per sentence atau kata per kalimat} \\
+s/w &= \text{strokes per word atau karakter per kata}
+\end{align*}
 
 Namun formula ini hanya mengukur keterbacaan dalam teks berbahasa inggris. Sehingga tidak dapat diterapkan langsung kedalam teks berbahasa indonesia. Maka dari itu penelitian ini bertujuan untuk mengembangkan formula baru ARI untuk bahasa indonesia dengan menggunakan metode yang akan ditentukan nanti.
 
-Untuk menunjang pengukuran tingkat keterbacaan, akan dikembangkan sebuah perangkat lunak yang dapat menampung teks atau pdf yang nantinya mampu melakukan penilaian tingkat keterbacaan pada teks yang dimasukkan.
+Untuk menunjang pengukuran tingkat keterbacaan, akan dikembangkan sebuah perangkat lunak yang dapat menampung teks dan melakukan penilaian tingkat keterbacaan teks yang dimasukkan secara otomatis.
 
-Dari berbagai macam teknik tuning yang dapat digunakan untuk melakukan penyesuaian pada formula, dipilih teknik...
-
-Perangkat lunak akan dibuat dengan bantuan framework .Net, Untuk keperluan pengujian eksperimental akan digunakan buku pelajaran tingkat dasar Indonesia, kelas 1 sampai dengan 12 yang diterbitkan oleh kemendikbud, serta bank soal survei LPM.
+Perangkat lunak akan dibuat dengan bantuan framework .Net, Untuk keperluan pengujian akan digunakan buku pelajaran tingkat dasar Indonesia, kelas 1 sampai dengan 12 yang diterbitkan oleh kemendikbud, serta bank soal survei LPM untuk pengujian eksperimental.
 
 \section{Rumusan Masalah}
-Tuliskan rumusan dari masalah yang akan anda bahas pada tugas akhir ini. Rumusan masalah biasanya berupa kalimat pertanyaan. Gunakan penomoran untuk menuliskan rumusan masalah ini.
+1. Bagaimana cara mengadaptasi formula Automated Readability Index (ARI) yang sesuai dengan bahasa Indonesia?
+2. Bagaimana merancang sebuah aplikasi yang dapat menghitung tingkat keterbacaan teks dengan formula Automated Readability Index (ARI) secara otomatis? 
+3. Seberapa tinggi tingkat akurasi dan korelasinya hasil pengukuran keterbacaan sistem ARI Bahasa Indonesia jika dibandingkan dengan tingkat keterbacaan aktual?
 
 \section{Tujuan}
-Tuliskan tujuan dari topik tugas akhir yang anda ajukan. Tujuan penelitian biasanya berkaitan erat dengan pertanyaan yang diajukan di bagian rumusan masalah. Gunakan penomoran untuk menuliskan rumusan masalah ini, di mana tiap nomor berkaitan dengan nomor pada rumusan masalah.
+1. Mengadaptasi formula Automated Readability Index (ARI) yang terkalibrasi dengan Bahasa Indonesia, dengan mempertimbangkan variabel seperti jumlah karakter, panjang kata, dan panjang kalimat.
+2. Merancang dan mengimplementasikan sebuah aplikasi yang dapat menghitung tingkat keterbacaan teks menggunakan formula Automated Readability Index (ARI) secara otomatis.
+3. Menganalisis dan menguji tingkat akurasi serta korelasi hasil pengukuran keterbacaan dari sistem ARI Bahasa Indonesia yang dikembangkan, jika dibandingkan dengan standar tingkat keterbacaan aktual.
 
 \section{Deskripsi Perangkat Lunak}
 Perangkat lunak akhir yang akan dibuat memiliki fitur minimal sebagai berikut:
 \begin{itemize}
     \item Pengguna dapat memasukkan teks kedalam textbox
-    \item Pengguna dapat melakukan attachment file berformat .txt, .pdf
+    \item Pengguna dapat melakukan attachment file berformat .txt
     \item Pengguna dapat menghapus seluruh teks dalam textbox
     \item Pengguna dapat melihat hasil analisa teks
-    \item Pengguna dapat mengunduh hasil analisa teks kedalam format pdf
+    \item Pengguna dapat mengunduh hasil analisa teks kedalam format pdf (belum tentu akan dibuat)
 \end{itemize}
 
 \section{Detail Pengerjaan Tugas Akhir}
-Tuliskan bagian-bagian pengerjaan skripsi secara detail. Bagian pekerjaan tersebut mencakup awal hingga akhir skripsi, termasuk di dalamnya pengerjaan dokumentasi skripsi, pengujian, survei, dll.
 
 Bagian-bagian pekerjaan skripsi ini adalah sebagai berikut:
 \begin{enumerate}
     \item Mempelajari bahasa pemrograman C sharp beserta dengan framework .Net
-    \item Melakukan studi literatur mengenai index keterbacaan
+    \item Melakukan studi literatur mengenai Automated Readibility Index
+    \item Merancang aplikasi yang akan dibangun
+    \item Mengimplementasikan fitur input melalui textbox
+    \item Mengimplementasikan fitur penerimaan file berformat .txt
+    \item Mengimplementasikan fitur perhitungan jumlah karakter, jumlah huruf, dan jumlah kalimat
+    \item Mengimplementasikan fitur perhitungan formula
     \item Merancang strategi pra-pemrosesan data
-    \item Merancang perangkat lunak untuk memroses data
     \item Melakukan proses eksperimentasi pada data
     \item Menulis dokumen tugas akhir
 \end{enumerate}
@@ -103,16 +122,20 @@ Bagian-bagian pekerjaan skripsi ini adalah sebagai berikut:
 \section{Rencana Kerja}
 Rincian capaian yang direncanakan di Tugas Akhir 1 adalah sebagai berikut:
 \begin{enumerate}
-    \item 
-    \item 
-    \item 
+    \item Mempelajari bahasa pemrograman C sharp beserta dengan framework .Net
+    \item Melakukan studi literatur mengenai ARI dan material terkait
+    \item Merancang aplikasi yang akan dibangun
+    \item Menulis dokumen Tugas akhir pada bab 1, 2, 3
 \end{enumerate}
 
 Sedangkan yang akan diselesaikan di Tugas Akhir 2 adalah sebagai berikut:
 \begin{enumerate}
-    \item 
-    \item 
-    \item 
+    \item Mengimplementasikan fitur input melalui textbox
+    \item Mengimplementasikan fitur perhitungan jumlah karakter, jumlah huruf, dan jumlah kalimat
+    \item Mengimplementasikan fitur perhitungan formula
+    \item Merancang strategi pra-pemrosesan data
+    \item Melakukan proses eksperimentasi pada data
+    \item Menyelesaikan dokumen tugas akhir yaitu bab 4, 5, 6
 \end{enumerate}
 
 \vspace{1cm}
