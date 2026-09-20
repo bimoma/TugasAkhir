@@ -1,6 +1,6 @@
 \documentclass[a4paper,twoside]{article}
 \usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc} 
+\usepackage[utf8]{inputenc}
 \usepackage[bahasa]{babel}
 \usepackage{amsmath}
 \usepackage{graphicx}
@@ -9,24 +9,23 @@
 \usepackage{etoolbox}
 \usepackage{setspace}
 \usepackage{lipsum}
-\usepackage[inner=2cm,outer=2.5cm,top=2.5cm,bottom=2cm]{geometry} 
-
-\pagestyle{myheadings}
-\setlength{\headsep}{30pt}
+\usepackage[inner=2cm,outer=2.5cm,top=2.5cm,bottom=2cm]{geometry}
 
 \makeatletter
 \renewcommand{\@maketitle}{\begin{center} {\LARGE \textbf{\textsc{\@title}} \par} \bigskip {\large \textbf{\textsc{\@author}}} \end{center}}
 \renewcommand{\thispagestyle}[1]{}
 \makeatother
 
-\markright{\textbf{\textsc{AIF184001/AIF184002 \textemdash Rencana Kerja Tugas Akhir \textemdash Sem. Ganjil 2023/2024}}}
+\markright{\textbf{\textsc{AIF184001/AIF184002 \textemdash Rencana Kerja Tugas Akhir \textemdash Sem. Ganjil 2026/2027}}}
 
 \newcommand{\HRule}{\rule{\linewidth}{0.4mm}}
 \renewcommand{\baselinestretch}{1}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{6pt}
 
-% Variable Definitions
+\onehalfspacing
+
+% Pendefinisian variabel sebelum dipanggil di \title dan \author
 \newcommand{\nama}{Bimo Muzakki Adikoesoemo}
 \newcommand{\npm}{6182201058}
 \newcommand{\judultopik}{Indeks Keterbacaan Otomatis untuk Bahasa Indonesia}
@@ -35,8 +34,6 @@
 
 \title{\judultopik}
 \author{\nama \textendash \npm}
-
-\onehalfspacing
 
 \begin{document}
 
@@ -47,95 +44,104 @@
 \pagenumbering{arabic}
 
 \section{Deskripsi}
-Buku teks yang baik diharapkan dapat dipahami oleh seluruh target pembacanya. Salah satu aspek yang membuat sebuah buku mudah dipahami adalah keterbacaan. Keterbacaan harus disesuaikan dengan tingkat pemahaman pembacanya. Untuk itu, terdapat formula yang diciptakan untuk mengukur tingkat keterbacaan teks. Salah satunya adalah Automated Readability Index yang diciptakan oleh Smith \& Senter pada tahun 1967 untuk mengukur tingkat kesulitan membaca materi teknis Angkatan Udara AS dalam bahasa inggris. Pada penelitian tersebut, dipasangkan alat pada mesin ketik untuk menghitung jumlah karakter, kata dan kalimat. Lalu, 24 buku di Cincinnati Public School System diketik dengan alat ini, dipilih dari buku-buku kelas (grade) satu hingga kelas tujuh dan diambil 20 sampel halaman dari setiap buku. Setelah itu, dihitung:
+Buku teks yang baik diharapkan dapat dipahami oleh seluruh target pembacanya. Salah satu aspek utama yang menentukan tingkat pemahaman terhadap sebuah buku adalah keterbacaan (\textit{readability}). Keterbacaan teks harus disesuaikan secara tepat dengan tingkat perkembangan kognitif dan tingkat pemahaman pembacanya. Untuk mengukur keterbacaan secara objektif, telah dikembangkan berbagai formula statistik, salah satunya adalah \textit{Automated Readability Index} (ARI). Formula ini dikembangkan oleh Smith \& Senter pada tahun 1967 untuk menilai tingkat kesulitan membaca materi teknis Angkatan Udara Amerika Serikat dalam bahasa Inggris.
+
+Pada penelitian awal Smith \& Senter, dipasangkan instrumen khusus pada mesin ketik untuk menghitung jumlah karakter, kata, dan kalimat secara mekanis. Sebanyak 24 buku dari sistem sekolah publik di Cincinnati (\textit{Cincinnati Public School System}) digunakan sebagai sampel, yang mencakup jenjang kelas (\textit{grade}) satu hingga tujuh dengan mengambil 20 sampel halaman dari setiap buku. Parameter yang dihitung meliputi:
 \begin{itemize}
-    \item word per sentence ratio (w/s), dengan membagi kata dengan kalimat.
-    \item strokes per word ratio (s/w), membagi jumlah karakter dengan kata.
+    \item \textit{word per sentence ratio} ($w/s$), yaitu membagi jumlah kata dengan jumlah kalimat;
+    \item \textit{strokes per word ratio} ($s/w$), yaitu membagi jumlah karakter dengan jumlah kata.
 \end{itemize}
-Kemudian didapatkan:
+Kemudian, diperoleh hasil sebagai berikut:
 \begin{itemize}
-    \item Product moment correlation antara w/s dengan grade adalah 0,96.
-    \item Korelasi antara s/w dengan grade adalah 0,84.
-    \item Korelasi antara panjang kalimat dengan panjang kata adalah 0,71.
+    \item Korelasi \textit{product-moment} antara $w/s$ dan \textit{grade} adalah 0,96.
+    \item Korelasi antara $s/w$ dan \textit{grade} adalah 0,84.
+    \item Korelasi antara panjang kalimat dan panjang kata adalah 0,71.
 \end{itemize}
 Penggabungan rasio-rasio tersebut menghasilkan:
 \begin{itemize}
-    \item Multiple R 0,98 di dalam teks yang bobotnya dievaluasi.
-    \item Beta-coefficient yang dikaitkan dengan panjang kalimat adalah 0,72, sedangkan untuk panjang kata adalah 0,33.
+    \item \textit{Multiple R} sebesar 0,98 di dalam teks yang bobotnya dievaluasi.
+    \item \textit{Beta-coefficient} yang dikaitkan dengan panjang kalimat adalah 0,72, sedangkan untuk panjang kata adalah 0,33.
 \end{itemize}
 Berdasarkan parameter statistik yang didapatkan, persamaan regresi berganda untuk memprediksi tingkat kelas ($GL$) diformulasikan sebagai:
 \begin{equation}
-GL = 0.50\left(\frac{w}{s}\right)
-   + 4.71\left(\frac{s}{w}\right)
-   - 21.43
+GL = 0{,}50\left(\frac{w}{s}\right)
+   + 4{,}71\left(\frac{s}{w}\right)
+   - 21{,}43
 \end{equation}
 
-dimana:
+di mana:
 \begin{align*}
-GL &= \text{tingkatan kelas} \\
-w/s &= \text{words per sentence atau kata per kalimat} \\
-s/w &= \text{strokes per word atau karakter per kata}
+GL &= \text{tingkatan kelas (\textit{grade level}, skala 1--12)} \\
+w/s &= \text{\textit{words per sentence} atau kata per kalimat} \\
+s/w &= \text{\textit{strokes per word} atau karakter per kata}
 \end{align*}
 
-Namun formula ini hanya mengukur keterbacaan dalam teks berbahasa inggris. Sehingga tidak dapat diterapkan langsung kedalam teks berbahasa indonesia. Maka dari itu penelitian ini bertujuan untuk mengembangkan formula baru ARI untuk bahasa indonesia dengan menggunakan metode yang akan ditentukan nanti.
+Meskipun formula ARI efisien karena tidak memerlukan perhitungan jumlah suku kata secara manual, formula standar ini dirancang khusus berdasarkan struktur morfologi bahasa Inggris. Penerapan langsung formula ini pada teks berbahasa Indonesia tidak dapat dilakukan. Secara morfologis, bahasa Indonesia memiliki karakteristik kata yang cenderung lebih panjang akibat penggunaan imbuhan, sehingga rasio karakter per kata pada teks bahasa Indonesia bernilai lebih tinggi dibandingkan dengan bahasa Inggris. Akibatnya, estimasi \textit{Grade Level} dari formula ARI asli menjadi berlebihan jika diterapkan tanpa rekalibrasi.
 
-Untuk menunjang pengukuran tingkat keterbacaan, akan dikembangkan sebuah perangkat lunak yang dapat menampung teks dan melakukan penilaian tingkat keterbacaan teks yang dimasukkan secara otomatis.
+Oleh karena itu, penelitian ini bertujuan untuk mengadaptasi dan merekalibrasi formula ARI khusus untuk bahasa Indonesia. Prosedur rekalibrasi dilakukan dengan menentukan kembali nilai bobot konstanta dan koefisien regresi berganda melalui pemrosesan data statistik dari korpus teks bahasa Indonesia. Jenjang $GL$ hasil rekalibrasi selanjutnya akan disesuaikan dengan jenjang pendidikan formal di Indonesia, yaitu Sekolah Dasar (1-6), Sekolah Menengah Pertama (7-9), dan Sekolah Menengah Atas/Kejuruan (10-12).
 
-Perangkat lunak akan dibuat dengan bantuan framework .Net, Untuk keperluan pengujian akan digunakan buku pelajaran tingkat dasar Indonesia, kelas 1 sampai dengan 12 yang diterbitkan oleh kemendikbud, serta bank soal survei LPM untuk pengujian eksperimental.
+Untuk menunjang pengujian dan penerapan formula baru tersebut, akan dikembangkan sebuah perangkat lunak berbasis \textit{desktop} dengan menggunakan \textit{framework} .NET. Perangkat lunak ini berfungsi untuk memuat teks masukan baik secara manual melalui \textit{text box} maupun unggahan berkas .txt, melakukan prapemrosesan teks, menghitung skor ARI terkalibrasi, serta menampilkan klasifikasi tingkat keterbacaan teks secara otomatis.
+
+Untuk keperluan data latih, dan data uji dalam proses rekalibrasi akan digunakan buku pelajaran tingkat dasar Indonesia, kelas 1 sampai dengan 12 yang diterbitkan oleh Kemendikbud, serta bank soal survei dari LPM sebagai pembanding keterbacaan aktual.
 
 \section{Rumusan Masalah}
-1. Bagaimana cara mengadaptasi formula Automated Readability Index (ARI) yang sesuai dengan bahasa Indonesia?
-2. Bagaimana merancang sebuah aplikasi yang dapat menghitung tingkat keterbacaan teks dengan formula Automated Readability Index (ARI) secara otomatis? 
-3. Seberapa tinggi tingkat akurasi dan korelasinya hasil pengukuran keterbacaan sistem ARI Bahasa Indonesia jika dibandingkan dengan tingkat keterbacaan aktual?
+Rumusan masalah yang akan dibahas dalam tugas akhir ini adalah sebagai berikut:
+\begin{enumerate}
+    \item Bagaimana cara mengadaptasi formula \textit{Automated Readability Index} (ARI) yang sesuai dengan bahasa Indonesia?
+    \item Bagaimana merancang sebuah aplikasi yang dapat menghitung tingkat keterbacaan teks dengan formula \textit{Automated Readability Index} (ARI) secara otomatis?
+    \item Seberapa tinggi tingkat akurasi dan korelasi hasil pengukuran keterbacaan sistem ARI bahasa Indonesia jika dibandingkan dengan tingkat keterbacaan aktual?
+\end{enumerate}
 
 \section{Tujuan}
-1. Mengadaptasi formula Automated Readability Index (ARI) yang terkalibrasi dengan Bahasa Indonesia, dengan mempertimbangkan variabel seperti jumlah karakter, panjang kata, dan panjang kalimat.
-2. Merancang dan mengimplementasikan sebuah aplikasi yang dapat menghitung tingkat keterbacaan teks menggunakan formula Automated Readability Index (ARI) secara otomatis.
-3. Menganalisis dan menguji tingkat akurasi serta korelasi hasil pengukuran keterbacaan dari sistem ARI Bahasa Indonesia yang dikembangkan, jika dibandingkan dengan standar tingkat keterbacaan aktual.
+Tujuan yang ingin dicapai dalam tugas akhir ini adalah sebagai berikut:
+\begin{enumerate}
+    \item Mengadaptasi formula \textit{Automated Readability Index} (ARI) yang terkalibrasi dengan bahasa Indonesia, dengan mempertimbangkan variabel seperti jumlah karakter, panjang kata, dan panjang kalimat.
+    \item Merancang dan mengimplementasikan sebuah aplikasi yang dapat menghitung tingkat keterbacaan teks menggunakan formula \textit{Automated Readability Index} (ARI) secara otomatis.
+    \item Menganalisis dan menguji tingkat akurasi serta korelasi hasil pengukuran keterbacaan dari sistem ARI bahasa Indonesia yang dikembangkan jika dibandingkan dengan standar tingkat keterbacaan aktual.
+\end{enumerate}
 
 \section{Deskripsi Perangkat Lunak}
 Perangkat lunak akhir yang akan dibuat memiliki fitur minimal sebagai berikut:
 \begin{itemize}
-    \item Pengguna dapat memasukkan teks kedalam textbox
-    \item Pengguna dapat melakukan attachment file berformat .txt
-    \item Pengguna dapat menghapus seluruh teks dalam textbox
-    \item Pengguna dapat melihat hasil analisa teks
-    \item Pengguna dapat mengunduh hasil analisa teks kedalam format pdf (belum tentu akan dibuat)
+    \item Pengguna dapat memasukkan teks ke dalam \textit{text box}.
+    \item Pengguna dapat melampirkan berkas berformat .txt.
+    \item Pengguna dapat menghapus seluruh teks di dalam \textit{text box}.
+    \item Pengguna dapat melihat hasil analisis teks.
+    \item Pengguna dapat mengunduh hasil analisis teks ke dalam format PDF (opsional/belum tentu dibuat).
 \end{itemize}
 
 \section{Detail Pengerjaan Tugas Akhir}
-
-Bagian-bagian pekerjaan skripsi ini adalah sebagai berikut:
+Bagian-bagian pekerjaan tugas akhir ini adalah sebagai berikut:
 \begin{enumerate}
-    \item Mempelajari bahasa pemrograman C sharp beserta dengan framework .Net
-    \item Melakukan studi literatur mengenai Automated Readibility Index
-    \item Merancang aplikasi yang akan dibangun
-    \item Mengimplementasikan fitur input melalui textbox
-    \item Mengimplementasikan fitur penerimaan file berformat .txt
-    \item Mengimplementasikan fitur perhitungan jumlah karakter, jumlah huruf, dan jumlah kalimat
-    \item Mengimplementasikan fitur perhitungan formula
-    \item Merancang strategi pra-pemrosesan data
-    \item Melakukan proses eksperimentasi pada data
-    \item Menulis dokumen tugas akhir
+    \item Mempelajari bahasa pemrograman C\# beserta \textit{framework} .NET.
+    \item Melakukan studi literatur mengenai \textit{Automated Readability Index}.
+    \item Merancang aplikasi yang akan dibangun.
+    \item Mengimplementasikan fitur masukan (\textit{input}) melalui \textit{text box}.
+    \item Mengimplementasikan fitur penerimaan berkas berformat .txt.
+    \item Mengimplementasikan fitur perhitungan jumlah karakter, jumlah kata, dan jumlah kalimat.
+    \item Mengimplementasikan fitur perhitungan formula.
+    \item Merancang strategi prapemrosesan data.
+    \item Melakukan proses eksperimentasi pada data.
+    \item Menulis dokumen tugas akhir.
 \end{enumerate}
 
 \section{Rencana Kerja}
-Rincian capaian yang direncanakan di Tugas Akhir 1 adalah sebagai berikut:
+Rincian capaian yang direncanakan pada Tugas Akhir 1 adalah sebagai berikut:
 \begin{enumerate}
-    \item Mempelajari bahasa pemrograman C sharp beserta dengan framework .Net
-    \item Melakukan studi literatur mengenai ARI dan material terkait
-    \item Merancang aplikasi yang akan dibangun
-    \item Menulis dokumen Tugas akhir pada bab 1, 2, 3
+    \item Mempelajari bahasa pemrograman C\# beserta \textit{framework} .NET.
+    \item Melakukan studi literatur mengenai ARI dan materi terkait.
+    \item Merancang aplikasi yang akan dibangun.
+    \item Menulis dokumen Tugas Akhir pada Bab 1, 2, dan 3.
 \end{enumerate}
 
-Sedangkan yang akan diselesaikan di Tugas Akhir 2 adalah sebagai berikut:
+Sementara itu, capaian yang akan diselesaikan pada Tugas Akhir 2 adalah sebagai berikut:
 \begin{enumerate}
-    \item Mengimplementasikan fitur input melalui textbox
-    \item Mengimplementasikan fitur perhitungan jumlah karakter, jumlah huruf, dan jumlah kalimat
-    \item Mengimplementasikan fitur perhitungan formula
-    \item Merancang strategi pra-pemrosesan data
-    \item Melakukan proses eksperimentasi pada data
-    \item Menyelesaikan dokumen tugas akhir yaitu bab 4, 5, 6
+    \item Mengimplementasikan fitur \textit{input} melalui \textit{text box}.
+    \item Mengimplementasikan fitur perhitungan jumlah karakter, jumlah kata, dan jumlah kalimat.
+    \item Mengimplementasikan fitur perhitungan formula.
+    \item Merancang strategi prapemrosesan data.
+    \item Melakukan proses eksperimentasi pada data.
+    \item Menyelesaikan dokumen Tugas Akhir, yaitu Bab 4, 5, dan 6.
 \end{enumerate}
 
 \vspace{1cm}
@@ -154,7 +160,7 @@ Sedangkan yang akan diselesaikan di Tugas Akhir 2 adalah sebagai berikut:
     \vspace{0.5cm}
 }{
     Menyetujui, \\
-    \vspace{2cm} Nama: \makebox[3cm]{\hrulefill}\\ Pembimbing Tunggal
+    \vspace{2cm} Nama: Pascal Alfadian Nugroho, S.Kom., M.Comp. \makebox[3cm]{\hrulefill}\\ Pembimbing Tunggal
 }
 
 \end{document}
