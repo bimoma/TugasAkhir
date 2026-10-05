@@ -5,7 +5,7 @@
 \section{Latar Belakang}
 \label{sec:label}
 
-Buku teks yang baik diharapkan dapat dipahami oleh seluruh target pembacanya. Salah satu aspek utama yang menentukan tingkat pemahaman terhadap sebuah buku adalah keterbacaan (\textit{readability}). Keterbacaan teks harus disesuaikan secara tepat dengan tingkat perkembangan kognitif dan tingkat pemahaman pembacanya. Untuk mengukur keterbacaan secara objektif, telah dikembangkan berbagai formula statistik, salah satunya adalah \textit{Automated Readability Index} (ARI). Formula ini dikembangkan oleh Smith \& Senter pada tahun 1967 untuk menilai tingkat kesulitan membaca materi teknis Angkatan Udara Amerika Serikat dalam bahasa Inggris.
+Salah satu sarana utama penunjang pendidikan adalah buku teks. Buku teks yang efektif tidak hanya dilihat dari kebenaran substansialnya saja, melainkan juga oleh daya keterbacaannya. Keterbacaan merujuk pada derajat kesulitan dan kemudahan suatu teks untuk dipahami oleh peserta didik~\cite{fadziah2017penerapan}. Apabila teks terlalu sulit untuk dipahami siswa, maka siswa tersebut akan mengalami frustasi yang berujung pada terhambatnya proses belajar. Sedangkan, jika terlalu mudah, maka siswa akan mengalami rasa bosan~\cite{novianto2024analisis}. Oleh karena itu, penyesuaian tingkat keterbacaan materi ajar terhadap jenjang pendidikan sasaran merupakan hal yang penting. Secara tradisional, penentuan tingkat keterbacaan suatu buku dilakukan melalui penilaian subjektif oleh pakar atau melalui pengujian langsung kepada siswa. Metode tersebut membutuhkan waktu yang lama, biaya besar, serta sampel uji yang masif. Untuk mengatasi keterbatasan ini, para peneliti linguistik komputasional mengembangkan berbagai formula keterbacaan kuantitatif. salah satunya adalah \textit{Automated Readability Index} (ARI). Formula ini dikembangkan oleh Smith \& Senter pada tahun 1967 untuk menilai tingkat kesulitan membaca materi teknis Angkatan Udara Amerika Serikat dalam bahasa Inggris.
 
 Pada penelitian awal Smith \& Senter, dipasangkan instrumen khusus pada mesin ketik untuk menghitung jumlah karakter, kata, dan kalimat secara mekanis. Sebanyak 24 buku dari sistem sekolah publik di Cincinnati (\textit{Cincinnati Public School System}) digunakan sebagai sampel, yang mencakup jenjang kelas (\textit{grade}) satu hingga tujuh dengan mengambil 20 sampel halaman dari setiap buku. Parameter yang dihitung meliputi:
 \begin{itemize}
@@ -37,7 +37,7 @@ di mana:
     s/w &= \text{\textit{strokes per word} atau karakter per kata}
     \end{align*}
     
-Meskipun formula ARI efisien karena tidak memerlukan perhitungan jumlah suku kata secara manual, formula standar ini dirancang khusus berdasarkan struktur morfologi bahasa Inggris. Penerapan langsung formula ini pada teks berbahasa Indonesia tidak dapat dilakukan. Secara morfologis, bahasa Indonesia memiliki karakteristik kata yang cenderung lebih panjang akibat penggunaan imbuhan, sehingga rasio karakter per kata pada teks bahasa Indonesia bernilai lebih tinggi dibandingkan dengan bahasa Inggris. Akibatnya, estimasi \textit{Grade Level} dari formula ARI asli menjadi berlebihan jika diterapkan tanpa rekalibrasi.
+Meskipun formula ARI efisien karena tidak memerlukan perhitungan jumlah suku kata secara manual, formula standar ini dirancang khusus berdasarkan struktur kata bahasa Inggris. Penerapan formula ini pada teks bahasa indonesia menjadi kurang relevan karena terdapat perbedaan dari segi struktur linguistik~\cite{mangilaleng2025modification}. Pengaplikasian langsung formula ini pada teks berbahasa Indonesia tidak dapat secara efektif dilakukan. 
 
 Oleh karena itu, penelitian ini bertujuan untuk mengadaptasi dan merekalibrasi formula ARI khusus untuk bahasa Indonesia. Prosedur rekalibrasi dilakukan dengan menentukan kembali nilai bobot konstanta dan koefisien regresi berganda melalui pemrosesan data statistik dari korpus teks bahasa Indonesia. Jenjang $GL$ hasil rekalibrasi selanjutnya akan disesuaikan dengan jenjang pendidikan formal di Indonesia, yaitu Sekolah Dasar (1-6), Sekolah Menengah Pertama (7-9), dan Sekolah Menengah Atas/Kejuruan (10-12).
 
@@ -45,7 +45,6 @@ Untuk menunjang pengujian dan penerapan formula baru tersebut, akan dikembangkan
 
 Untuk keperluan data latih, dan data uji dalam proses rekalibrasi akan digunakan buku pelajaran tingkat dasar Indonesia, kelas 1 sampai dengan 12 yang diterbitkan oleh Kemendikbud, serta bank soal survei dari LPM sebagai pembanding keterbacaan aktual.
 
-\dtext{5-10}
 
 \section{Rumusan Masalah}
 \label{sec:rumusan}
@@ -54,7 +53,6 @@ Untuk keperluan data latih, dan data uji dalam proses rekalibrasi akan digunakan
     \item Bagaimana merancang sebuah aplikasi yang dapat menghitung tingkat keterbacaan teks dengan formula \textit{Automated Readability Index} (ARI) secara otomatis?
     \item Seberapa tinggi tingkat akurasi dan korelasi hasil pengukuran keterbacaan sistem ARI bahasa Indonesia jika dibandingkan dengan tingkat keterbacaan aktual?
 \end{enumerate}
-\dtext{6}
 
 \section{Tujuan}
 \label{sec:tujuan}
@@ -63,13 +61,11 @@ Untuk keperluan data latih, dan data uji dalam proses rekalibrasi akan digunakan
     \item Merancang dan mengimplementasikan sebuah aplikasi yang dapat menghitung tingkat keterbacaan teks menggunakan formula \textit{Automated Readability Index} (ARI) secara otomatis.
     \item Menganalisis dan menguji tingkat akurasi serta korelasi hasil pengukuran keterbacaan dari sistem ARI bahasa Indonesia yang dikembangkan jika dibandingkan dengan standar tingkat keterbacaan aktual.
 \end{enumerate}
-\dtext{7}
+
 
 \section{Batasan Masalah}
 \label{sec:batasan}
-Untuk mempermudah pembuatan template ini, tentu ada hal-hal yang harus dibatasi, misalnya saja bahwa template ini bukan berupa style \LaTeX{} pada umumnya (dengan alasannya karena belum mampu jika diminta membuat seperti itu)
 
-\dtext{8}
 
 \section{Metodologi}
 \label{sec:metlit}
@@ -85,16 +81,22 @@ Untuk mempermudah pembuatan template ini, tentu ada hal-hal yang harus dibatasi,
     \item Melakukan proses eksperimentasi pada data.
     \item Menulis dokumen tugas akhir.
 \end{enumerate}
-\dtext{9}
+
 
 \section{Sistematika Pembahasan}
+Sistematika pemabahasan tugas akhir ini adalah sebagai berikut:
 \label{sec:sispem}
 \begin{itemize}
     \item Bab 1 Pendahuluan
-    \item Bab 2 Landasan terkompresi
+    Membahas latar belakang, rumusan masalah, tujuan, batasan masalah, metodologi, dan sistematika pembahasan
+    \item Bab 2 Landasan teori
+    Membahas mengenai teori dan sumber ilmiah yang mendukung dalam penelitian ini. Hal ini meliputi Automated Readibility Index (ARI), Struktur linguistik bahasa indonesia, .NET framework.
     \item Bab 3 Analisis
+    Membahas mengenai hasil analisis terhadap kebutuhan perangkat lunak.
     \item bab 4 Perancangan
+    Membahas mengenai perancangan perangkat lunak yang akan dibangun.
     \item Bab 5 Implementasi dan pengujian
+    Membahas mengenai detail teknis realisasi pengembangan perangkat lunak. Selain itu, bab ini akan membahas mengenai pengujian perangkat lunak dengan menggunakan corpus yang telah dipilih
     \item Bab 6 Kesimpuan dan Saran
+    Membahas mengenai seluruh kesimpulan dari tugas akhir serta memberikan saran untuk penelitian selanjutnya.
 \end{itemize}
-\dtext{10}
