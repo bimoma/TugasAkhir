@@ -3,10 +3,14 @@
 \label{chap:teori}
 
 \section{Konsep Keterbacaan}
-Keterbacaan dapat diartikan sebagai kemudahan suatu teks untuk dipahami oleh pembaca. McLaughlin (1969, dalam \cite{dubay2004principles}) mendefinisikan keterbacaan sebagai sejauh mana sekelompok orang menganggap bahan bacaan tertentu menarik dan mudah dipahami. Menurut DuBay \cite{dubay2004principles}, definisi ini menekankan interaksi antara teks dan sekelompok pembaca yang memiliki karakteristik tertentu, seperti kemampuan membaca, pengetahuan awal, dan motivasi.
+Keterbacaan dapat diartikan sebagai kemudahan suatu teks untuk dipahami oleh pembaca. DuBay \cite{dubay2004principles} merangkum berbagai
+definisi keterbacaan. Salah satunya memandang bahwa keterbacaan sebagai sejauh mana sekelompok orang
+menganggap bahan bacaan tertentu menarik dan mudah dipahami. Menurut
+DuBay, definisi ini menekankan interaksi antara teks dan sekelompok
+pembaca yang memiliki karakteristik tertentu, seperti kemampuan membaca,
+pengetahuan awal, dan motivasi.
 
-\section{Formula Keterbacaan}
-Kitson (1921, dalam \cite{zamanian2012readability}) meneliti bagaimana pembaca majalah dan surat kabar yang berbeda memiliki karakteristik yang berbeda pula. Dari analisisnya terhadap kedua jenis media tersebut, ia menyimpulkan bahwa panjang kalimat dan panjang kata, yang dihitung berdasarkan jumlah suku kata, dapat dijadikan indikator keterbacaan yang baik. Temuan ini kemudian diperkuat oleh peneliti lain. Catalano (1990, dalam \cite{zamanian2012readability}) menyatakan bahwa para ahli keterbacaan dan penulisan berpendapat bahwa panjang kalimat merupakan pengukur tingkat kesulitan yang tepat karena panjang kalimat mencerminkan hubungan antarunsur di dalamnya.
+Kitson \cite{kitson1921mind} meneliti bagaimana pembaca majalah dan surat kabar yang berbeda memiliki karakteristik yang berbeda pula. Dari analisisnya terhadap kedua jenis media tersebut, ia menyimpulkan bahwa panjang kalimat dan panjang kata, yang dihitung berdasarkan jumlah suku kata, dapat dijadikan indikator keterbacaan yang baik. Temuan ini kemudian diperkuat oleh peneliti lain. Catalano \cite{catalano1990wire} menyatakan bahwa para ahli keterbacaan dan penulisan berpendapat bahwa panjang kalimat merupakan pengukur tingkat kesulitan yang tepat karena panjang kalimat mencerminkan hubungan antarunsur di dalamnya.
 
 Penelitian-penelitian awal tersebut memang belum melahirkan rumus keterbacaan, tetapi menjadi langkah awal yang penting menuju pengembangannya. Hingga kini, panjang kata dan panjang kalimat tetap menjadi faktor utama dalam rumus keterbacaan modern yang luas digunakan untuk mengklasifikasikan bahan bacaan \cite{zamanian2012readability}.
 
@@ -16,10 +20,37 @@ Penelitian-penelitian awal tersebut memang belum melahirkan rumus keterbacaan, t
 
 Formula ARI dikembangkan pertama kali oleh Edgar A. Smith dan R. J. Senter pada tahun 1967 melalui laporan riset teknis Angkatan Udara Amerika Serikat \cite{smith1967automated}. Tujuan utama pengembangan ARI saat itu adalah untuk menilai dan menyesuaikan tingkat kesulitan membaca pada manual pelatihan teknis militer agar sesuai dengan tingkat pendidikan personel militer.
 
-Pada masa awal pengembangannya, Smith dan Senter memasangkan instrumen penghitung mekanis khusus pada mesin ketik listrik untuk mencatat jumlah karakter (\textit{strokes}), kata (\textit{words}), dan kalimat (\textit{sentences}) secara otomatis ketika teks sedang diketik.
+Terdapat 2 faktor yang digunakan dalam ARI, yaitu kata per kalimat dan huruf per kata. Kata per kalimat sudah secara umum digunakan oleh banyak formula lain  sehingga tidak memerlukan verifikasi lebih lanjut. Sementara untuk memastikan bahwa huruf per kata adalah faktor pengukuran struktur kata yang dapat menggantikan metode pengukuran dari formula lain seperti Flesch (suku kata per huruf), dilakukan pengambilan sampel acak 20 huruf bersuku kata 1 hingga 5 dari \textit{Webster's New International Die-
+tionary}. DItemukan mean dari jumlah huruf untuk masing kata bersuku kata 1 hingga 5 adalah: 3.80, 5.50, 8.10, 10.85 dan 12.25. Dengan hasil mean tersebut, dilakukan t-test untuk masing-masing kelompok suku kata. Hasil menunjukkan perbedaan statistik yang signifikan dan konsisten dengan two tailed test menggunakan $\alpha$ = .01  
 
-\subsection{Persamaan Matematis dan Variabel ARI}
-Formula ARI memprediksi tingkat kelas (\textit{Grade Level} atau $GL$) pembaca berdasarkan dua rasio utama: rata-rata panjang kalimat (\textit{words per sentence}) dan rata-rata panjang kata (\textit{strokes per word}). Secara matematis, persamaan regresi linier berganda ARI dirumuskan sebagai berikut:
+\begin{table}[htbp]
+    \centering
+    \caption{t-TEST perbendingan jumlah huruf dalam kata ber suku kata 1 hingga 5}
+    \begin{tabular}{ccccc}
+        \textit{suku kata} & \textit{2} & \textit{3} & \textit{4} & \textit{5} \\
+        \midrule
+        1 & 5.07 & 12.22 & 17.41 & 18.53 \\
+        \midrule
+        2 &      & 7.41  & 13.31 & 14.80 \\
+        \midrule
+        3 &      &       & 6.55  & 8.85  \\
+        \midrule
+        4 &      &       &       & 2.75  \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+Dari hasil t-test dapat disimpulkan adanya relasi antara jumlah huruf dalam kata dan jumlah suku kata dalam kata.
+
+Kemudian, masing-masing faktor akan dikolerasikan dengan tingkatan kelas dari buku sekolah. Untuk itu, peneliti menggunakan sampel buku bacaan dari \textit{cinncinati public school system }yang dipilih dari buku kelas 1 hingga 7 dengan masing-masing 3 buku pada setiap tingkatan kelas. Sampel sebanyak 20 halaman pada setiap buku dipilih dengan perkiraan interval yang sama. 
+
+Smith dan Senter memasangkan instrumen penghitung mekanis khusus pada mesin ketik listrik untuk mencatat jumlah karakter (\textit{strokes}), kata (\textit{words}), dan kalimat (\textit{sentences}) secara otomatis ketika teks sedang diketik.  Lalu kemudian dihitung dua rasio pada setiap buku. Rasio panjang kalimat dihitung dengan membagi jumlah kata dengan jumlah kalimat. Rasio panjang kata dihitung dengan membagi jumlah ketukan tombol dengan jumlah kata. Kedua rasio tersebut lalu dikolerasikan dengan tingkatan kelas yang berlaku di \textit{ cinncinati public school system }. 
+
+Hasil product moment correlation antara panjang kalimat (huruf per kalimat) dan tingkat kelas bernilai  0,96. Kolerasi antara panjang kata (ketukan per huruf) dan tingkat kelas bernilai 0,84. Sementara, korelasi antara panjang kalimat dan panjang kata bernilai 0,71. Temuan ini mendukung hipotesis bahwa rasio panjang kata dan panjang kalimat berkaitan dengan tingkat keterbacaan sehingga layak digunakan untuk rumus keterbacaan.  
+
+Kedua rasio digabungkan dalam persamaan regresi berganda dengan tingkat kelas sebagai variabel terikat. Koefisien korelasi berganda yang diperoleh adalah R= .9832 pada teks yang menjadi dasar penentuan bobot. 
+
+Koefisien beta terstandar dihitung dari ketiga koefisien korelasi tersebut menghasilkan nilai .72 untuk panjang kalimat dan 0.33 untuk panjang kata. Hal ini menunjukkan bahwa panjang kalimat memberikan kontribusi sedikit lebih dari dua pertiga terhadap varians total ARI. Koefisien regresi diperoleh dengan mengalikan beta dengan rasio simpangan baku dengan hasil: 0,50 untuk panjang kalimat, dan 4,71 untuk panjang kata. Sementara konstanta ditemukan dengan nilai -21,43. Maka dirumuskanlah formula ARI sebagai berikut:
 \begin{equation}
 GL = 0{,}50\left(\frac{w}{s}\right)
    + 4{,}71\left(\frac{c}{w}\right)
@@ -37,36 +68,56 @@ GL = 0{,}50\left(\frac{w}{s}\right)
 \end{description}
 
 
-\subsection{Klasifikasi dan Interpretasi Grade Level}
-Luaran angka dari persamaan ARI ($GL$) merepresentasikan estimasi jenjang kelas yang dibutuhkan oleh seorang pembaca untuk dapat memahami isi teks secara mandiri. Penyetaraan nilai $GL$ hasil perhitungan formula ARI terhadap jenjang usia dan tingkat pendidikan formal ditunjukkan pada Tabel~\ref{tab:interpretasi_ari}.
-
-\begin{table}[h!]
-\centering
-\caption{Interpretasi Nilai \textit{Grade Level} (GL) Formula ARI \cite{smith1967automated}}
-\label{tab:interpretasi_ari}
-\begin{tabular}{|c|c|l|}
-\hline
-\textbf{Nilai $GL$} & \textbf{Rentang Usia (Tahun)} & \textbf{Tingkat Pendidikan (Sistem US)} \\ \hline
-1 & 6--7 & \textit{First Grade} (SD Kelas 1) \\ \hline
-2 & 7--8 & \textit{Second Grade} (SD Kelas 2) \\ \hline
-3 & 8--9 & \textit{Third Grade} (SD Kelas 3) \\ \hline
-4 & 9--10 & \textit{Fourth Grade} (SD Kelas 4) \\ \hline
-5 & 10--11 & \textit{Fifth Grade} (SD Kelas 5) \\ \hline
-6 & 11--12 & \textit{Sixth Grade} (SD Kelas 6) \\ \hline
-7 & 12--13 & \textit{Seventh Grade} (SMP Kelas 7) \\ \hline
-8 & 13--14 & \textit{Eighth Grade} (SMP Kelas 8) \\ \hline
-9 & 14--15 & \textit{Ninth Grade} (SMP Kelas 9) \\ \hline
-10 & 15--16 & \textit{Tenth Grade} (SMA Kelas 10) \\ \hline
-11 & 16--17 & \textit{Eleventh Grade} (SMA Kelas 11) \\ \hline
-12 & 17--18 & \textit{Twelfth Grade} (SMA Kelas 12) \\ \hline
-13--14 & 18--22 & \textit{College / Undergraduate} (Perguruan Tinggi) \\ \hline
-\end{tabular}
-\end{table}
 
 
-\section{Penelitian Terkait}
-Terdapat beberapa penelitian yang membahas mengenai adaptasi formula keterbacaan untuk Bahasa Indonesia, salah satunya dilakukan oleh Fadziah (2017), yang menggunakan formula \textit{Gunning Fog Index} dengan kombinasi algoritma \textit{Enhanced Confix Stripping} untuk proses \textit{stemming}. Formula \textit{Gunning Fog} membutuhkan pengukuran kata sulit yang pada penelitian ini ditujukan untuk kata serapan. Untuk mengenali kata serapan, setiap kata dikembalikan ke bentuk dasarnya melalui algoritma \textit{Enhanced Confix Stripping} lalu dicocokkan dengan kamus kata serapan. Validasi terhadap delapan teks yang dibandingkan dengan teknik \textit{cloze} menghasilkan akurasi 75\%, sedangkan akurasi \textit{stemming}-nya mencapai 82\% dengan kendala \textit{overstemming} dan \textit{understemming}.
-Penelitian ini masih memiliki keterbatasan, yakni validasi yang hanya memakai delapan teks dan ketergantungan pada hasil \textit{stemming} serta kamus. Oleh karena itu, pada penelitian ini akan digunakan formula ARI yang tidak memerlukan variabel kata kompleks, sehingga terhindar dari kesalahan yang timbul pada pemrosesan kata kompleks.
+\section{Gunning Fog Index}
+Gunning Fog Index dikembangkan pada tahun 1952 oleh Robert Gunning \cite{gunning1952technique}, yang merupakan seorang pebisnis Amerika yang pernah bekera dibidang penerbitan surat kabar dan buku teks. Gunning berpendapat bahwa ada banyak material baca yang penuh dengan kompleksitas yang tidak perlu. sehingga sulit bagi pelajar untuk memahaminya.
+
+Tahun 1944 Gunning membuat kantor konsultan yang berfokus pada keterbacaan.  Pada beberapa tahun setelahnya, ia telah bekerja dengan lebih dari 60 majalah populer dan surat kabar harian untuk membantu penulis dan editor membuat tulisan. Gunning mempublikasikan \textit{The Technique of Clear Writing} pada 1952 dan membuat Fog Index \cite{gunning1952technique}.
+
+Perhitungan index ini memiliki dua faktor, yaitu panjang kalimat dan proporsi kata kompleks. Kata kompleks didefinisikan sebagai kata dengan tiga atau lebih suku kata, dengan pengecualian meliputi nama diri, istilah teknis yang sudah lazim, dan kata majemuk. Formula yang digunakan adalah sebagai berikut:
+
+\begin{equation}
+\text{Skor} = 0{,}4 \times \left( \left( \frac{\text{Kata}}{\text{Kalimat}} \right) + 100 \times \frac{\text{Kata Kompleks}}{\text{Kata}} \right)
+\end{equation}
+
+Dengan:
+\begin{itemize}
+  \item \textit{Kata} = jumlah total kata dalam teks.
+  \item \textit{Kalimat} = jumlah total kalimat dalam teks.
+  \item \textit{Kata Kompleks} = kata yang terdiri dari tiga suku kata atau lebih, tidak termasuk nama diri, kata teknis yang sudah lazim, atau kata majemuk.
+\end{itemize}
+
+Secara praktis, langkahnya adalah memilih cuplikan teks sekitar 100 kata tanpa melewatkan kalimat, menjumlahkan rata-rata panjang kalimat dengan persentase kata kompleks, lalu mengalikan hasilnya dengan 0,4. Hasilnya dibaca sebagai tingkat pendidikan  pada sistem pendidikan Amerika Serikat.
+
+Adapun fog index memiliki beberapa limitasi yang perlu diperhatikan. Fog index menganggap kata-kata yang normal digunakan sehari-hari seperti \textit{unfortunately} atau \textit{beautiful} sebagai kata kompleks dikarenakan jumlah suku kata yang dimilikinya. Kemudian fog index tidak memperhitungkan tingkat pemahaman pembaca, sebuah tulisan mungkin menggunakan kalimat kalimat pendek namun penuh akan jargon yang tidak dipahami pembaca. 
+
+\section{Pengukuran Keterbacaan untuk Bahasa Indoensia }
+Terdapat beberapa penelitian yang membahas mengenai adaptasi formula keterbacaan untuk Bahasa Indonesia, salah satunya dilakukan oleh Fadziah \cite{fadziah2017penerapan}, yang menggunakan formula \textit{Gunning Fog Index} dengan kombinasi algoritma \textit{Enhanced Confix Stripping} untuk proses \textit{stemming}. Formula \textit{Gunning Fog} membutuhkan pengukuran kata sulit yang pada penelitian ini ditujukan untuk kata serapan. Untuk mengenali kata serapan, setiap kata dikembalikan ke bentuk dasarnya melalui algoritma \textit{Enhanced Confix Stripping} lalu dicocokkan dengan kamus kata serapan. Validasi terhadap delapan teks yang dibandingkan dengan teknik \textit{cloze} menghasilkan akurasi 75\%, sedangkan akurasi \textit{stemming}-nya mencapai 82\% dengan kendala \textit{overstemming} dan \textit{understemming}.
+Penelitian ini masih memiliki keterbatasan, yakni validasi yang hanya memakai delapan teks dan ketergantungan pada hasil \textit{stemming} serta kamus. 
+
+Penelitian lain dilakukan oleh Riza dkk. \cite{riza2024implementasi}, yang
+mengimplementasikan \textit{Gunning Fog Index} untuk mengukur keterbacaan
+100 abstrak tugas akhir mahasiswa dari satu perguruan tinggi dalam bentuk
+aplikasi web berbasis Python. Mengacu pada Fadziah
+\cite{fadziah2017penerapan}, kata kompleks didefinisikan sebagai kata
+serapan dari bahasa Inggris yang memiliki tiga suku kata atau lebih.
+Setiap kata di-\textit{stem} terlebih dahulu, lalu bentuk dasarnya
+dicocokkan dengan kamus kata serapan sebelum jumlah suku katanya
+diperiksa. Rata-rata skor dari 100 abstrak adalah 9,26, dengan 68\%
+abstrak tergolong mudah, 9\% sedang, dan 23\% sulit, sedangkan rata-rata
+antarprogram studi berkisar antara 8,83 dan 9,87. Pengujian yang
+dilakukan berupa pengujian \textit{black box} terhadap fitur aplikasi.
+Penelitian ini memiliki beberapa keterbatasan. Pertama, pengujian hanya
+menilai fungsi aplikasi sehingga skor keterbacaan tidak divalidasi
+terhadap pemahaman pembaca maupun teknik pembanding seperti
+\textit{cloze}. Kedua, hasil bergantung pada \textit{stemming} dan kamus
+serapan yang sumber serta cakupannya tidak dijelaskan secara rinci. 
+
+Kedua penelitian tersebut menunjukkan bahwa penerapan
+\textit{Gunning Fog Index} pada teks berbahasa Indonesia sangat bergantung
+pada definisi dan pemrosesan kata kompleks, yaitu \textit{stemming} dan
+kamus serapan. Oleh karena itu, pada penelitian ini akan digunakan formula ARI yang tidak memerlukan variabel kata kompleks, sehingga terhindar dari kesalahan yang timbul pada pemrosesan kata kompleks.
 
 \section{.NET Framework}
 \label{sec:skripsi}
