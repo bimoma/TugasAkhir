@@ -1,0 +1,42 @@
+ \chapter{Analisis}
+\label{chap:analisis}
+
+\section{Sumber Bahan Uji}
+\label{sec:3:sistemkini}
+
+Pada penelitian ini, bahan uji yang akan digunakan berasal dari buku teks kurikulum 2013 yang diakses melalui portal sistem informasi perbukuan indonesia milik Kementrian Pendidikan Dasar dan Menengah (Kemendikdasmen). Katalog pada portal ini memuat pilihan buku teks dari jenjang sekolah dasar kelas satu hingga sekolah menengah atas kelas dua belas yang semuanya dalam format digital. 
+
+\subsection{Alasan Pemilihan Sumber Data}
+Pemilihan katalog buku teks k-13 pada platform SIBI didasarkan pada beberapa pertimbangan. Pertimbangan pertama adalah keresmian, buku diterbitkan dan disediakan oleh pemerintah sehingga dapat dianggap mewakili bahan akar yang digunakan secara nasional. Selain itu standar penyajian sudah mencakup kelayakan penyampaian isi buku sesuai dengan tingkat perkembangan peserta didik. Aspek ini berkaitan langsung dengan keterbacaan, sehingga hasil perhitungan dapat dibandingkan langsung dengan tingkat kelas sasaran buku. 
+
+\section{Pemetaan US Grade ke Sistem Pendidikan Indonesia}
+Pemetaan tingkat kelas Amerika Serikat ke sistem pendidikan Indonesia dalam penelitian ini dilakukan berdasarkan tingkat pendidikan. Formula ARI memberi tingkatan keterbacaan dari tingkat primer sampai kelas 7 pada Cincinnati Public School System dengan tingkat kelas yang ditetapkan oleh penerbit dan sistem sekolah setempat. Struktur sekolah dalam laporan ARI, yaitu junior high (kelas 7–9) dan senior high (kelas 10–12), sejalan dengan jenjang pendidikan Indonesia, yaitu SD (kelas 1–6), SMP (kelas 7–9), dan SMA/SMK (kelas 10–12). Adapun, bahan uji yang digunakan untuk formulasi ARI hanya menggunakan tingkat primer sampai kelas 7. Penyetaraan nilai $GL$ hasil perhitungan formula ARI terhadap jenjang usia dan tingkat pendidikan formal ditunjukkan pada Tabel~\ref{tab:interpretasi_ari}.
+
+\begin{table}[h!]
+\centering
+\caption{Interpretasi Nilai \textit{Grade Level} (GL) Formula ARI \cite{smith1967automated}}
+\label{tab:interpretasi_ari}
+\begin{tabular}{|c|c|l|}
+\hline
+\textbf{Nilai $GL$} & \textbf{Rentang Usia (Tahun)} & \textbf{Tingkat Pendidikan (Sistem US)} \\ \hline
+1 & 6--7 & \textit{First Grade} (SD Kelas 1) \\ \hline
+2 & 7--8 & \textit{Second Grade} (SD Kelas 2) \\ \hline
+3 & 8--9 & \textit{Third Grade} (SD Kelas 3) \\ \hline
+4 & 9--10 & \textit{Fourth Grade} (SD Kelas 4) \\ \hline
+5 & 10--11 & \textit{Fifth Grade} (SD Kelas 5) \\ \hline
+6 & 11--12 & \textit{Sixth Grade} (SD Kelas 6) \\ \hline
+7 & 12--13 & \textit{Seventh Grade} (SMP Kelas 7) \\ \hline
+8 & 13--14 & \textit{Eighth Grade} (SMP Kelas 8) \\ \hline
+9 & 14--15 & \textit{Ninth Grade} (SMP Kelas 9) \\ \hline
+10 & 15--16 & \textit{Tenth Grade} (SMA Kelas 10) \\ \hline
+11 & 16--17 & \textit{Eleventh Grade} (SMA Kelas 11) \\ \hline
+12 & 17--18 & \textit{Twelfth Grade} (SMA Kelas 12) \\ \hline
+13--14 & 18--22 & \textit{College / Undergraduate} (Perguruan Tinggi) \\ \hline
+\end{tabular}
+\end{table}
+
+
+\section{Perbedaan Automated Readability Index (ARI) dan Gunning Fog Index}
+Perbedaan paling mendasar terletak pada cara keduanya mengukur kesulitan kata. ARI, bertumpu pada rata-rata jumlah karakter per kata, bukan jumlah suku kata seperti indeks lainnya. ARI dirancang untuk menghindari kerumitan penghitungan suku kata. Indeks ini dirancang untuk pemantauan keterbacaan secara langsung pada mesin ketik listrik. Fog Index, di sisi lain, menilai kesulitan kata berdasarkan proporsi kata kompleks, yaitu kata dengan tiga suku kata atau lebih, di luar nama diri, jargon yang sudah lazim, dan kata majemuk.
+
+Keduanya sama-sama menggabungkan panjang kalimat dengan indikator kesulitan kata, dan keduanya menghasilkan perkiraan tingkat kelas (grade level) menurut sistem pendidikan Amerika Serikat. 
